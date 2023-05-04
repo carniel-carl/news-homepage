@@ -1,0 +1,50 @@
+.footer {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+
+.products {
+  display: flex;
+  height: fit-content;
+  gap: 1.5rem;
+}
+
+.products img {
+  display: block;
+  width: 100px;
+}
+
+.text-area {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.text-area h4 {
+  color: var(--GRAYISH-BLUE);
+  font-size: 2rem;
+}
+
+.text-heading {
+  color: var(--VERY-DARK-BLUE);
+  font-weight: 800;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.text-heading:hover {
+  color: var(--SOFT-RED);
+}
+
+.text {
+  color: var(--DARK-GRAYISH-BLUE);
+}
+
+@media screen and (max-width: 500px) {
+  .footer {
+    flex-direction: column;
+  }
+}

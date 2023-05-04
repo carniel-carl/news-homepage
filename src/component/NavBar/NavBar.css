@@ -1,0 +1,41 @@
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--DARK-GRAYISH-BLUE);
+  transition: all 0.5s;
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: var(--SOFT-RED);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.web-links ul {
+  display: flex;
+  gap: 3rem;
+}
+
+.menu-icon {
+  display: none;
+}
+
+@media screen and (max-width: 500px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .web-links {
+    display: none;
+  }
+}

@@ -9,15 +9,27 @@ import Footer from "./component/Footer/Footer";
 function App() {
   const [sidebar, setSideBar] = useState(false);
 
-  const toggleSideBar = () => {
-    setSideBar((prev) => !prev);
+  const openSideBar = () => {
+    setSideBar(true);
+
+    // Disables Background Scrolling whilst the SideDrawer/Modal is open
+    if (typeof window != "undefined" && window.document) {
+      document.body.style.overflow = "hidden";
+    }
+  };
+
+  const closeSideBar = () => {
+    setSideBar(false);
+
+    // Unsets Background Scrolling to use when SideDrawer/Modal is closed
+    document.body.style.overflow = "unset";
   };
 
   return (
     <div className="App">
-      <NavBar opensidebar={toggleSideBar} />
-      <BackDrop showsidebar={sidebar} closesidebar={toggleSideBar} />
-      <SideBar showsidebar={sidebar} closesidebar={toggleSideBar} />
+      <NavBar opensidebar={openSideBar} />
+      <BackDrop showsidebar={sidebar} closesidebar={closeSideBar} />
+      <SideBar showsidebar={sidebar} closesidebar={closeSideBar} />
       <Main />
       <Footer />
     </div>
